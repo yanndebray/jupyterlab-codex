@@ -1,0 +1,20 @@
+{
+  "title": "jupyterlab-codex",
+  "description": "Settings for the jupyterlab-codex extension.",
+  "type": "object",
+  "properties": {
+    "codexModel": {
+      "title": "Codex model",
+      "description": "Model identifier passed to the Codex Responses API. Must be a model your ChatGPT account is entitled to (e.g. gpt-5.3-codex).",
+      "type": "string",
+      "default": "gpt-5.3-codex"
+    },
+    "codexProxyUrl": {
+      "title": "Codex proxy URL",
+      "description": "Endpoint that forwards Codex requests to OpenAI with the user's bearer token attached. Default 'codex' is resolved against the Jupyter server's base URL and hits the bundled server extension. JupyterLite users must override to an external proxy URL (e.g. '/.netlify/functions/codex' or 'https://my-proxy.example.com/codex').",
+      "type": "string",
+      "default": "codex"
+    }
+  },
+  "additionalProperties": false
+}

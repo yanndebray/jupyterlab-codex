@@ -1,0 +1,377 @@
+/* jupyterlab-codex — sidebar + agent styling */
+
+.jp-codex-sidebar {
+  min-width: 320px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.jp-codex-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.jp-codex-content {
+  flex: 1;
+  overflow: auto;
+  padding-top: 4px;
+}
+
+.jp-codex-placeholder {
+  color: var(--jp-ui-font-color2);
+  font-style: italic;
+  padding: 12px;
+}
+
+/* --- Agent / chat panel --------------------------------------------- */
+
+.jp-codex-agent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 8px;
+}
+
+.jp-codex-agent-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.jp-codex-agent-intro {
+  font-size: var(--jp-ui-font-size0);
+  color: var(--jp-ui-font-color2);
+  margin: 0 0 4px 0;
+  flex: 1 1 auto;
+}
+
+.jp-codex-agent-clear {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  background: transparent;
+  color: var(--jp-ui-font-color2);
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jp-codex-agent-clear:hover {
+  background: var(--jp-layout-color2);
+}
+
+.jp-codex-agent-provider {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 6px 0;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--jp-border-color2);
+}
+
+.jp-codex-agent-provider-status {
+  flex: 1 1 auto;
+  font-size: var(--jp-ui-font-size0);
+  color: var(--jp-ui-font-color2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jp-codex-agent-provider-model {
+  font-size: var(--jp-ui-font-size0);
+  color: var(--jp-ui-font-color2);
+  background: var(--jp-layout-color2);
+  border-radius: 3px;
+  padding: 0 4px;
+  font-family: var(--jp-code-font-family);
+}
+
+.jp-codex-agent-provider-btn {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  background: transparent;
+  color: var(--jp-ui-font-color2);
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size0);
+}
+
+.jp-codex-agent-provider-btn:hover {
+  background: var(--jp-layout-color2);
+}
+
+.jp-codex-agent-provider-btn:disabled {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.jp-codex-agent-transcript {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+
+.jp-codex-agent-msg {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: var(--jp-ui-font-size1);
+  line-height: 1.4;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.jp-codex-agent-msg p {
+  margin: 0 0 6px 0;
+}
+
+.jp-codex-agent-msg p:last-child {
+  margin-bottom: 0;
+}
+
+.jp-codex-agent-msg pre.jp-codex-code {
+  background: var(--jp-layout-color2);
+  padding: 8px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  margin: 6px 0;
+}
+
+.jp-codex-agent-msg code {
+  background: var(--jp-layout-color2);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: var(--jp-code-font-family);
+  font-size: 0.95em;
+}
+
+.jp-codex-agent-msg-user {
+  background: var(--jp-brand-color3);
+  color: var(--jp-ui-font-color1);
+  align-self: flex-end;
+}
+
+.jp-codex-agent-msg-assistant {
+  background: var(--jp-layout-color1);
+  border: 1px solid var(--jp-border-color2);
+  align-self: flex-start;
+}
+
+.jp-codex-agent-msg-loading {
+  font-style: italic;
+  color: var(--jp-ui-font-color2);
+  align-self: flex-start;
+}
+
+.jp-codex-agent-notice {
+  margin: 0 !important;
+  font-size: var(--jp-ui-font-size0);
+  color: var(--jp-warn-color1, #c77700);
+}
+
+.jp-codex-agent-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--jp-border-color2);
+}
+
+.jp-codex-agent-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  font-family: var(--jp-ui-font-family);
+  font-size: var(--jp-ui-font-size1);
+  border: 1px solid var(--jp-border-color1);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.jp-codex-agent-send {
+  align-self: flex-end;
+  padding: 4px 14px;
+  background: var(--jp-brand-color1);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--jp-ui-font-size1);
+}
+
+.jp-codex-agent-send:disabled {
+  background: var(--jp-layout-color3);
+  cursor: not-allowed;
+}
+
+/* --- Tool cards ------------------------------------------------------ */
+
+.jp-codex-agent-tool {
+  align-self: stretch;
+}
+
+.jp-codex-tool-card {
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 4px;
+  background: var(--jp-layout-color1);
+  font-size: var(--jp-ui-font-size0);
+  overflow: hidden;
+}
+
+.jp-codex-tool-header {
+  cursor: pointer;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  list-style: none;
+}
+
+.jp-codex-tool-header::-webkit-details-marker {
+  display: none;
+}
+
+.jp-codex-tool-header code {
+  background: none;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jp-codex-tool-icon {
+  font-weight: bold;
+  width: 14px;
+  display: inline-block;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.jp-codex-tool-running .jp-codex-tool-icon {
+  color: var(--jp-ui-font-color2);
+}
+
+.jp-codex-tool-ok .jp-codex-tool-icon {
+  color: var(--jp-success-color1, #4caf50);
+}
+
+.jp-codex-tool-error .jp-codex-tool-icon {
+  color: var(--jp-error-color1, #d32f2f);
+}
+
+.jp-codex-tool-body {
+  margin: 0;
+  padding: 8px;
+  background: var(--jp-layout-color2);
+  border-top: 1px solid var(--jp-border-color2);
+  max-height: 240px;
+  overflow: auto;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* --- Device-code sign-in modal -------------------------------------- */
+
+.jp-codex-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.jp-codex-modal {
+  background: var(--jp-layout-color1, #fff);
+  color: var(--jp-ui-font-color1, #000);
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  padding: 24px 28px;
+  max-width: 440px;
+  width: calc(100vw - 64px);
+  font-size: var(--jp-ui-font-size1);
+}
+
+.jp-codex-modal h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.05em;
+}
+
+.jp-codex-modal p {
+  margin: 8px 0;
+  line-height: 1.45;
+}
+
+.jp-codex-modal a {
+  color: var(--jp-brand-color1, #1976d2);
+  text-decoration: none;
+}
+
+.jp-codex-modal a:hover {
+  text-decoration: underline;
+}
+
+.jp-codex-modal-code {
+  margin: 14px 0;
+  padding: 12px 16px;
+  background: var(--jp-layout-color2);
+  border: 1px solid var(--jp-border-color2);
+  border-radius: 4px;
+  font-family: var(--jp-code-font-family);
+  font-size: 1.4em;
+  letter-spacing: 0.08em;
+  text-align: center;
+  cursor: pointer;
+  user-select: all;
+  transition: background 120ms ease-out;
+}
+
+.jp-codex-modal-code-copied {
+  background: var(--jp-success-color3, #c8e6c9);
+}
+
+.jp-codex-modal-note {
+  font-size: 0.92em;
+  color: var(--jp-ui-font-color2, #555);
+}
+
+.jp-codex-modal-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.jp-codex-modal-actions button {
+  padding: 6px 14px;
+  border: 1px solid var(--jp-border-color1);
+  background: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color1);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.jp-codex-modal-actions button:hover {
+  background: var(--jp-layout-color3);
+}

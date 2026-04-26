@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+.venv/
+
+# JupyterLab / node
+node_modules/
+lib/
+tsconfig.tsbuildinfo
+.yarn/
+.pnp.*
+jupyterlab_codex/labextension/
+jupyterlab_codex/_version_build.py
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+.env
+
+# Local scratch / demo notebooks created during testing
+demo/
