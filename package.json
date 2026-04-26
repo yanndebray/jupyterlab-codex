@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/yanndebray/jupyterlab-codex/issues"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "author": {
     "name": "jupyterlab-codex contributors"
   },

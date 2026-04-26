@@ -3,13 +3,31 @@
 A JupyterLab 4 extension that adds an **OpenAI Codex** chat panel to the
 left sidebar. The OpenAI mark serves as the sidebar tab icon.
 
-The agent can:
+## Scope: notebook copilot, not project agent
+
+This is a deliberately small tool. The agent can only:
 
 - list variables in your notebook kernel
 - describe a pandas DataFrame
 - run short Python snippets in the kernel
 - read the source / outputs of a selected cell or a cell by execution count
 - insert (and optionally run) a new code cell below the active one
+
+That's the complete tool surface. **No filesystem read/write. No shell.
+No MCP. No project-wide context.** The agent sees what's in your kernel
+and your active notebook — nothing else.
+
+This is a feature, not a limitation. Claude Code, Cursor, and the Codex
+CLI itself are excellent project agents — they edit files, run tests,
+manage git. Use them for that. `jupyterlab-codex` is for the inner
+loop *inside* a notebook: explain this cell, evaluate this model,
+describe this DataFrame, write the next cell. It runs where your
+exploratory work already lives, with zero context-switch and a live
+view of kernel state.
+
+If you find yourself wishing it could grep your repo, that's a sign you
+want a different tool — and you almost certainly already have one open
+in another window.
 
 Authentication uses the user's ChatGPT subscription via OAuth (the same
 flow the Codex CLI uses). Tokens live in `localStorage` and are
