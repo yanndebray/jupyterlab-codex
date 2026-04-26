@@ -76,12 +76,10 @@ Pyodide, the page is static). The Python package isn't installed, so
 the bundled proxy can't run. Host a proxy out-of-band and override
 `codexProxyUrl` to point at it.
 
-The reference implementation is the Netlify function in the
-[`jupyterlab-skore`](https://github.com/yanndebray/jupyterlab-skore)
-project (`netlify/functions/codex.ts`) — exposes the same four routes
-with the same dispatch shape, so it's a drop-in. Cloudflare Workers,
-AWS Lambda, or a self-hosted FastAPI service work equally well as long
-as they implement:
+The bundled `jupyterlab_codex/handlers.py` is itself a reference
+implementation — port it to whichever runtime you prefer (Netlify
+Function, Cloudflare Worker, AWS Lambda, a small FastAPI service). Any
+proxy works as long as it exposes the same four routes:
 
 ```
 POST  <proxy>                       → forwards Responses API call upstream
