@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-codex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JupyterLab extension that opens an OpenAI Codex chat in the left sidebar.",
   "keywords": [
     "jupyter",
@@ -40,7 +40,7 @@
     "clean": "jlpm clean:lib",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "clean:lintcache": "rimraf .eslintcache .stylelintcache",
-    "clean:labextension": "rimraf jupyterlab_codex/labextension jupyterlab_codex/_version.py",
+    "clean:labextension": "rimraf jupyter_codex/labextension jupyter_codex/_version.py",
     "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
     "install:extension": "jlpm build",
     "watch": "run-p watch:src watch:labextension",
@@ -74,7 +74,7 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "jupyterlab_codex/labextension",
+    "outputDir": "jupyter_codex/labextension",
     "schemaDir": "schema"
   }
 }

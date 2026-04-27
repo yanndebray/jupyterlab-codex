@@ -15,8 +15,8 @@ lib/
 tsconfig.tsbuildinfo
 .yarn/
 .pnp.*
-jupyterlab_codex/labextension/
-jupyterlab_codex/_version_build.py
+jupyter_codex/labextension/
+jupyter_codex/_version_build.py
 
 # IDE
 .vscode/

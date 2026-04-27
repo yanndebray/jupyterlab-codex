@@ -33,6 +33,8 @@ Authentication uses the user's ChatGPT subscription via OAuth (the same
 flow the Codex CLI uses). Tokens live in `localStorage` and are
 forwarded to a small proxy that talks to the Codex Responses API.
 
+Tested in JupyterLab 4 and JupyterLite. Notebook 7 should work — file an issue if it doesn't.
+
 ## Two deployment modes
 
 The extension needs a **proxy** because both
@@ -42,13 +44,13 @@ how you're running JupyterLab.
 
 ### Classic JupyterLab — bundled, no external infra
 
-`pip install jupyterlab-codex` ships a Tornado server extension that
+`pip install jupyter-codex` ships a Tornado server extension that
 proxies to OpenAI from same-origin. The browser fetches `/codex` and
 `/codex/device/...` on whichever host the Jupyter server is exposed on
 — no CORS, no third-party services.
 
 ```bash
-pip install jupyterlab-codex     # (or pip install -e . for dev)
+pip install jupyter-codex        # (or pip install -e . for dev)
 jupyter lab
 ```
 
@@ -76,7 +78,7 @@ Pyodide, the page is static). The Python package isn't installed, so
 the bundled proxy can't run. Host a proxy out-of-band and override
 `codexProxyUrl` to point at it.
 
-The bundled `jupyterlab_codex/handlers.py` is itself a reference
+The bundled `jupyter_codex/handlers.py` is itself a reference
 implementation — port it to whichever runtime you prefer (Netlify
 Function, Cloudflare Worker, AWS Lambda, a small FastAPI service). Any
 proxy works as long as it exposes the same four routes:
@@ -139,7 +141,7 @@ src/
     markdown.ts         # tiny markdown → HTML renderer
 schema/plugin.json      # ISettingRegistry schema
 style/                  # sidebar + chat CSS, OpenAI SVG mark
-jupyterlab_codex/
+jupyter_codex/         # Python distribution name on PyPI: jupyter-codex
   __init__.py           # labextension paths + server-extension entry points
   handlers.py           # Tornado proxy: /codex, /codex/device/*, /codex/refresh
 jupyter-config/         # auto-enables the server extension on install

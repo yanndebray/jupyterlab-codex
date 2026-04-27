@@ -1,4 +1,4 @@
-"""jupyterlab_codex — JupyterLab extension exposing OpenAI Codex in a side panel.
+"""jupyter_codex — JupyterLab extension exposing OpenAI Codex in a side panel.
 
 In classic JupyterLab the Python package serves two roles:
 
@@ -31,19 +31,19 @@ def _jupyter_labextension_paths():
 
 def _jupyter_server_extension_points():
     """Declare this module as a Jupyter server extension."""
-    return [{"module": "jupyterlab_codex"}]
+    return [{"module": "jupyter_codex"}]
 
 
 def _load_jupyter_server_extension(server_app) -> None:
     """Register Codex proxy routes with the Jupyter server."""
     if _setup_handlers is None:
         server_app.log.warning(
-            "jupyterlab_codex: jupyter_server not available; "
+            "jupyter_codex: jupyter_server not available; "
             "skipping proxy routes (expected in JupyterLite)."
         )
         return
     _setup_handlers(server_app.web_app)
-    server_app.log.info("Registered jupyterlab_codex server extension")
+    server_app.log.info("Registered jupyter_codex server extension")
 
 
 # Backwards-compatible alias for older jupyter_server releases.
